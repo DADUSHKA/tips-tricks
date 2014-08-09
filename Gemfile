@@ -1,3 +1,5 @@
 source 'https://rubygems.org'
 gem 'sinatra'
 gem 'puma'
+gem 'prismic.io', require: 'prismic'
+gem 'haml'
