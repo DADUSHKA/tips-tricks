@@ -1,3 +1,9 @@
 - @tips.each do |tip|
-  %a{href: link_resolver.link_to(tip)}= tip.fragments['title'].as_html(link_resolver)
-  ~ tip.fragments['content'].as_html(link_resolver)
+  %article
+    .header
+      %a{href: link_resolver.link_to(tip)}= tip.fragments['title'].as_html(link_resolver)
+      -#%em by Mikhail Kuzmin
+    .body
+      ~ tip.fragments['content'].as_html(link_resolver)
+      %p
+        %a{href: "#{link_resolver.link_to(tip)}#disqus_thread"} Comments
